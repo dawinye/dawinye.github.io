@@ -1,26 +1,80 @@
-*{
+
+body {
+    background-color: #0a1e29;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+ }
+ nav {
+    width: 100vw;
+    position:fixed;
+    top: 0px;
+ }
+ ul {
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-.navbar{
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0,0, 0.5);
-    position: stick;
-    top: 0;
-}
-.navbar ul{
+    flex-direction: row;
+    justify-content: space-around;
+ }
+li {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
     display: flex;
-    list-style:none;
-    margin: 20px 0px;
-}
-.navbar ul li{
-    font-family: century;
-    font-size: 1.1rem;
-    font-weight: bold;
+ }
+ a {
+    z-index: 1;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 5px;
+ }
+ li::before {
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color: #0D7CFF;
+    right: 0;
+    z-index: 0;
+    top: 33.33%;
+    transition: all 0.5s;
+ }
+ li::after {
+    content: "";
+    position: absolute;
+    height: 33.33%;
+    width: 0;
+    background-color: #0D7CFF;
+    left: 0;
+    z-index: 0;
+    bottom: 0;
+    transition: all 0.5s;
+ }
+ a::before {
+    position: absolute;
+    content: "";
+    height: 33.33%;
+    width: 0;
+    background-color: #0D7CFF;
+    bottom: 66.66%;
+    left: 0;
+    transition: all 0.5s;
+ } 
+ li:hover:before,
+li:hover::after,
+li:hover a::before{
+   width: 100%;
 }
 
 .navbar ul li a{
@@ -33,5 +87,19 @@
     background-color: white;
     color: black;
     box-shadow: 0 0 10px white;
-    
+
+}
+
+
+
+
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right:0;
+    background: url('background1.svg') no-repeat center/cover;
+    height: 900px;
+    width: 100%;
+    z-index: -1;
 }
